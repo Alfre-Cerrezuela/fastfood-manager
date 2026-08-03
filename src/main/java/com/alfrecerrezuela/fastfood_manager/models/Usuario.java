@@ -14,23 +14,30 @@ public class Usuario {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private long id;
 	private String name;
-	private String password;
 	@Email
 	private String email;
 	private String telefono;
 	private Boolean activo= true;
-	private LocalDate fechaNacimento;
-	private LocalDate fechaAlta;
+	private int DNI;
 
-
-	public Usuario(String name, String password, String email, String telefono, int año, int mes, int dia) {
+	public Usuario(String name, String email, String telefono, int DNI) {
 		this.name = name;
-		this.password = password;
 		this.email = email;
 		this.telefono = telefono;
-		this.fechaNacimento = LocalDate.of(año, mes, dia);
-		this.fechaAlta =  LocalDate.now();
+		this.DNI = DNI;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Usuario{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", email='" + email + '\'' +
+				", telefono='" + telefono + '\'' +
+				", activo=" + activo +
+				", DNI=" + DNI +
+				'}';
+	}
 }
+
+

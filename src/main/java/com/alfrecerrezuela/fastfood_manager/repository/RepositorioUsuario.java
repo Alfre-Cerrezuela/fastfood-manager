@@ -3,11 +3,13 @@ package com.alfrecerrezuela.fastfood_manager.repository;
 import com.alfrecerrezuela.fastfood_manager.models.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
-import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
 
 @RepositoryRestResource()
 public interface RepositorioUsuario extends JpaRepository<Usuario, Long> {
-	private Usuario findByEmail(String email) {
-		return null;
-	}
+	Optional<Usuario> findByEmail(String email);
+	List<Usuario> findByActiveTrue();
+	boolean existsByEmail(String email);
 }

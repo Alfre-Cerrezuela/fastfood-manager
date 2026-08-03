@@ -16,9 +16,7 @@ public class FastfoodManagerApplication {
 	@Bean
 	public CommandLineRunner init(RepositorioUsuario repositorioUsuario) {
 		return args -> {
-			Usuario usurio1 = new Usuario("Alfre","123","Alfredodcerrezuel@gmail.com", "1140334172", 2004,5,9);
 
-			repositorioUsuario.save(usurio1);
 
 		};
 	}
